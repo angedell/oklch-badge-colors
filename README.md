@@ -32,6 +32,10 @@ console.log(from); // oklch(34% 0.16 68)
 console.log(to); // oklch(20% 0.16 82)
 ```
 
+with this package you can create colorful badges based on the content of the badge.
+
+![example](./example.png)
+
 ## Features
 
 - Deterministic per-string colors
