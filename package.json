@@ -1,0 +1,38 @@
+{
+  "name": "oklch-badge-colors",
+  "version": "1.0.0",
+  "description": "Deterministic OKLCH color generator for badges with dark mode and WCAG contrast correction",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "oklch",
+    "color",
+    "badge",
+    "design-system",
+    "dark-mode",
+    "wcag",
+    "intentui",
+    "ui"
+  ],
+  "license": "MIT",
+  "author": "Angelo Dell Acqua"
+}
