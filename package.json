@@ -2,6 +2,14 @@
   "name": "oklch-badge-colors",
   "version": "1.0.0",
   "description": "Deterministic OKLCH color generator for badges with dark mode and WCAG contrast correction",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angedell/oklch-badge-colors.git"
+  },
+  "bugs": {
+    "url": "https://github.com/angedell/oklch-badge-colors/issues"
+  },
+  "homepage": "https://github.com/angedell/oklch-badge-colors#readme",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
