@@ -36,6 +36,50 @@ with this package you can create colorful badges based on the content of the bad
 
 ![example](./example.png)
 
+```typescript
+import { generateBadgeColors } from "oklch-badge-colors";
+import * as React from "react";
+import { useTheme } from "#/components/theme-provider";
+import { Badge } from "#/components/ui/badge";
+
+interface DynamicBadgeProps {
+	children: string;
+	className?: string;
+}
+
+export function DynamicBadge({ children, className }: DynamicBadgeProps) {
+	const { resolvedTheme } = useTheme();
+
+	const colors = React.useMemo(
+		() =>
+			generateBadgeColors(children, {
+				mode: resolvedTheme,
+				contrast: 4.5,
+			}),
+		[children, resolvedTheme],
+	);
+
+	return (
+		<Badge
+			className={className}
+			style={{
+				background: `linear-gradient(135deg, ${colors.gradient.from}, ${colors.gradient.to})`,
+				color: colors.foreground,
+				borderColor: colors.border,
+				transition:
+					"background 200ms cubic-bezier(0.4, 0, 0.2, 1), color 200ms cubic-bezier(0.4, 0, 0.2, 1), border-color 200ms cubic-bezier(0.4, 0, 0.2, 1)",
+			}}
+		>
+			{children}
+		</Badge>
+	);
+}
+
+
+```
+
+
+
 ## Features
 
 - Deterministic per-string colors
